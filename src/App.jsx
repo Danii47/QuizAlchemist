@@ -1,15 +1,24 @@
 import './App.css'
-import { useFirebaseApp } from 'reactfire'
+import {db} from "./firebase.js"
+import {set,ref} from "firebase/database"
 
 
 function App() {
-  const firebase = useFirebaseApp()
 
-  console.log(firebase)
+  console.log('Holaaaa')
+
+  const writeToDatabase = () =>{
+    const uid = "prueba1";
+    const userRef = ref(db,uid)
+    const userData = {
+      prueba: 'hola'
+    }
+    set(userRef, userData)
+  }
 
   return (
     <>
-      
+      <button onClick={writeToDatabase()}>Test</button>
       
     </>
   )
