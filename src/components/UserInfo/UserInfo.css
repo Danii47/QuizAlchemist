@@ -1,0 +1,23 @@
+.userLayout {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 1.2vw;
+  padding: 0 1%;
+  margin: 10px;
+  border-radius: 20px;
+  border: 1px solid transparent;
+  transition: .3s all;
+  
+}
+
+.userLayout:hover {
+  background-color: #bfff51;
+  border: 1px solid #0000002f;
+  cursor: pointer;
+}
+
+.userLayout img {
+  border-radius: 50%;
+  height: 75%;
+}

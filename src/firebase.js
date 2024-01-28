@@ -1,5 +1,5 @@
-import {initializeApp} from "firebase/app"
-import {getDatabase} from "firebase/database"
+import { initializeApp } from "firebase/app"
+import { getDatabase } from "firebase/database"
 
 const firebaseConfig = {
     apiKey: "AIzaSyB3nwiV08BwS7IXSu3vR-RWQ-dtrXuZgfY",

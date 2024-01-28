@@ -1,0 +1,12 @@
+.toolbarMenu {
+  width: 100vw;
+  height: 10vh;
+  margin: 0;
+  background-color: #a2ff00;
+  display: flex;
+  justify-content: space-between;
+}
+
+.toolbarMenu img {
+  margin: 10px;
+}
