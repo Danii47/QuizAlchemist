@@ -1,25 +1,38 @@
 import './App.css'
 import {db} from "./firebase.js"
-import {set,ref} from "firebase/database"
+import {set,ref,get} from "firebase/database"
 
 
 function App() {
 
-  console.log('Holaaaa')
 
   const writeToDatabase = () =>{
     const uid = "prueba1";
     const userRef = ref(db,uid)
     const userData = {
-      prueba: 'hola'
+      prueba: 'hola',
+      hoa: 'gergre'
     }
     set(userRef, userData)
   }
 
+  const readInDatabase = () =>{
+    const uid = "prueba1"
+    const userRef = ref(db,uid)
+    get(userRef).then((snapshot)=>{
+      if(snapshot){
+        if(snapshot.val().prueba){
+          console.log(snapshot.val().prueba)
+        }
+      }
+    })
+
+    
+  }
+
   return (
     <>
-      <button onClick={writeToDatabase()}>Test</button>
-      
+      <button onClick={readInDatabase()}>Test</button>
     </>
   )
 }
