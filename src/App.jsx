@@ -1,25 +1,25 @@
 import './App.css'
-import {db} from "./firebase.js"
-import {set,ref} from "firebase/database"
-
+import Collection from './components/Collection.jsx'
+// import { db } from "./firebase.js"
+// import { set, ref } from "firebase/database"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
-  console.log('Holaaaa')
 
-  const writeToDatabase = () =>{
-    const uid = "prueba1";
-    const userRef = ref(db,uid)
-    const userData = {
-      prueba: 'hola'
-    }
-    set(userRef, userData)
-  }
+  // const writeToDatabase = () => {
+  //   const uid = "prueba1";
+  //   const userRef = ref(db, uid)
+  //   const userData = {
+  //     prueba: 'hola'
+  //   }
+  //   set(userRef, userData)
+  // }
 
   return (
     <>
-      <button onClick={writeToDatabase()}>Test</button>
-      
+      {/* <button onClick={() => writeToDatabase()}>Test</button> */}
+      <Collection title={"FOE"} numberOfQuestions={60} color={"#29f"} />
     </>
   )
 }
