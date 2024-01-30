@@ -1,20 +1,22 @@
 import './App.css'
 import Collection from './components/Collection.jsx'
-// import { db } from "./firebase.js"
-// import { set, ref,get } from "firebase/database"
+import { db } from "./firebase.js"
+import { set, ref,get } from "firebase/database"
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
 
 
-  // const writeToDatabase = () => {
-  //   const uid = "prueba1";
-  //   const userRef = ref(db, uid)
-  //   const userData = {
-  //     prueba: 'hola'
-  //   }
-  //   set(userRef, userData)
-  // }
+  const writeToDatabase = () => {
+    const uid = "prueba1";
+    const userRef = ref(db, uid)
+    const userData = {
+      prueba: 'hola'
+    }
+    set(userRef, userData)
+  }
+
+  
 
   return (
     <>
