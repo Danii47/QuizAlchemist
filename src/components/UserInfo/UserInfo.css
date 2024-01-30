@@ -1,23 +1,48 @@
-.userLayout {
-  box-sizing: border-box;
+.userLayoutContainer {
   display: flex;
   align-items: center;
-  gap: 1.2vw;
-  padding: 0 1%;
-  margin: 10px;
-  border-radius: 20px;
-  border: 1px solid transparent;
-  transition: .3s all;
-  
 }
 
-.userLayout:hover {
-  background-color: #bfff51;
-  border: 1px solid #0000002f;
-  cursor: pointer;
+#basic-button {
+  display: inline-block;
+  padding: 10px 0;
+  text-transform: none;
+  color: white;
+  border-radius: 10px;
 }
 
-.userLayout img {
+
+.userLayout {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 1vw;
+}
+
+.userName {
+  white-space: nowrap;
+  align-items: center;
+  padding: 0;
+  margin: 0 2vw 0 0;
+  color: var(--font-primary-color);
+}
+
+.userImg {
+  margin-right: 1vw;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
   border-radius: 50%;
-  height: 75%;
+}
+
+.userImg img {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+/*  */
+.MuiMenu-list{
+  width: 200px;
+
 }

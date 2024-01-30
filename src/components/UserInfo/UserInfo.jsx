@@ -1,14 +1,49 @@
 import "./UserInfo.css";
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import { useState }  from 'react';
+import userDefault from '../../assets/userDefault.png'
 
 
 export default function UserInfo() {
+
+  const [anchorEl, setAnchorEl] = useState(null);
+  const open = Boolean(anchorEl);
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
   return (
-
-    <div className="userLayout">
-
-      <img src="https://us.123rf.com/450wm/nadianb/nadianb1709/nadianb170900256/86443804-paisaje-id%C3%ADlico-en-las-monta%C3%B1as-escena-rural-hermosa-naturaleza-imagen-tonificada-cuadrado.jpg" alt="moro" />
-      <h4>Javier Moret Galán De Castro</h4>
+    <div className="userLayoutContainer">
+      <Button id="basic-button"
+        aria-controls={open ? 'basic-menu' : undefined}
+        aria-haspopup="true"
+        aria-expanded={open ? 'true' : undefined}
+        onClick={handleClick}
+      >
+        <div className="userLayout">
+          <div className="userImg">
+            <img src={userDefault} alt="" />
+          </div>
+          <h4 className="userName">Daniel Fernández Varona </h4>
+        </div>
+      </Button>
+      <Menu
+        id="basic-menu"
+        anchorEl={anchorEl}
+        open={open}
+        onClose={handleClose}
+        MenuListProps={{
+          'aria-labelledby': 'basic-button',
+        }}
+      >
+        <MenuItem onClick={handleClose}>Cerrar sesión</MenuItem>
+      </Menu>
     </div>
+
 
 
   )
