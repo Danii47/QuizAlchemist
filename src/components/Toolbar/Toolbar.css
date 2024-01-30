@@ -5,8 +5,21 @@
   background-color: var(--primary-color);
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid rgb(26, 70, 24);
 }
 
-.toolbarMenu img {
-  margin: 10px;
+.logoContainer{
+  display: flex;
+  width: auto;
+  align-items: center;
+}
+
+.logoContainer img {
+  margin: 0 50px 0 20px;
+  height: 8vh;
+}
+
+.logoName{
+  color: var(--font-primary-color);
+  font-size: 2em;
 }

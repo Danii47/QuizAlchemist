@@ -1,0 +1,40 @@
+.collectionsGroup {
+  list-style: none;
+  padding: 0;
+}
+
+.collectionsGroup button {
+  background-color: transparent;
+  color: var(--primary-color);
+  font-size: 1.5em;
+  width: 100%;
+  border: none;
+  height: 15vh;
+  border-top: 2px solid var(--primary-color);
+  transition: .2s all;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.collectionsGroup:last-child {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+
+
+.collectionsGroup button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.bandContainer {
+  width: 92%;
+  height: 85%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 8px solid red;
+  
+}

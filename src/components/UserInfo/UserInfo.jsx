@@ -6,6 +6,7 @@ import { useState }  from 'react';
 import userDefault from '../../assets/userDefault.png'
 
 
+
 export default function UserInfo() {
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -28,7 +29,7 @@ export default function UserInfo() {
           <div className="userImg">
             <img src={userDefault} alt="" />
           </div>
-          <h4 className="userName">Daniel Fernández Varona </h4>
+          <h4 className="userName">Javier Moret</h4>
         </div>
       </Button>
       <Menu

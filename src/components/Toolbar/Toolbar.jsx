@@ -11,7 +11,10 @@ export default function Toolbar() {
   return (
 
     <div className="toolbarMenu">
-      <img src={QuizAlchemistLogo} alt="" />
+      <div className="logoContainer">
+        <img src={QuizAlchemistLogo} alt="" />
+        <div className="logoName">Quiz Alchemist</div>
+      </div>
       <UserInfo />
     </div>
 

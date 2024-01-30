@@ -1,0 +1,14 @@
+.sidenavContainer {
+  width: 20vw;
+  background-color: var(--font-primary-color);
+  border-right: 1px solid rgba(0 0 0 / .2);
+  overflow-y: auto;
+}
+
+.sidenavContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.divider {
+  height: 5vh;
+}
