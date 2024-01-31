@@ -9,7 +9,7 @@
   font-size: 1.5em;
   width: 100%;
   border: none;
-  height: 15vh;
+  height: 12vh;
   border-top: 2px solid var(--primary-color);
   transition: .2s all;
   display: flex;
@@ -35,6 +35,5 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-left: 8px solid red;
-  
+  border-left: 8px solid;
 }

@@ -1,10 +1,10 @@
 import "./Main.css";
 
-export default function Main(){
+export default function Main() {
 
-    return(
-        <div className="mainContainer">
-            Main works!
-        </div>
-    )
+  return (
+    <div className="mainContainer">
+      Main works
+    </div>
+  )
 }
