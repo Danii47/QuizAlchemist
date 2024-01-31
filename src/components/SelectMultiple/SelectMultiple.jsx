@@ -28,7 +28,7 @@ export default function SelectMultiple({ themes }) {
       value={selectedTheme}
       onChange={handleChange}
       closeMenuOnSelect={false}
-      components={makeAnimated}
+      components={makeAnimated()}
       placeholder="Seleccione los temas..."
     />
   )
