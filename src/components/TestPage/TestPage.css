@@ -1,0 +1,46 @@
+.testForm{
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+    width: 80%;
+    margin: auto;
+}
+
+.selectMultipleContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1vw;
+}
+
+.selectMultipleLabel{
+    flex: 5;
+}
+.selectMultipleInput{
+    flex: 6;
+}
+
+.nQuestionsContainer{
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    align-items: center;
+}
+.nQuestionsLabel{
+    flex: 2;
+}
+.nQuestionsInput{
+    flex: 3;
+}
+.bottomRow{
+    display: flex;
+    justify-content: space-between;
+    gap: 1.2vw;
+}
+.examModeContainer{
+    display: flex;
+    flex: 1;
+    gap: .4vw;
+    justify-content: right;
+    align-items: center;
+}

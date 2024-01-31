@@ -1,32 +1,18 @@
-import { useState } from "react"
 import Select from "react-select"
 import makeAnimated from "react-select/animated"
 
-const options = [
-  { value: "rojo", label: "rojo" },
-  { value: "azul", label: "azul" },
-  { value: "verde", label: "verde" },
-  { value: "blanco", label: "blanco" }
-];
-
-export default function SelectMultiple({ themes }) {
-
-  const [selectedTheme, setSelectedTheme] = useState()
-  const handleChange = (selectedOption) => {
-    setSelectedTheme(selectedOption)
-  }
-
+export default function SelectMultiple({ themes, handleChangeSelectedThemes, selectedThemes }) {
 
   const themesNames = themes.map((theme, key) => {
-    return { label: theme.name, value: key }
+    return { label: theme.name, value: key, questionsLength: theme.questions.length }
   })
 
   return (
     <Select
       isMulti
       options={themesNames}
-      value={selectedTheme}
-      onChange={handleChange}
+      value={selectedThemes}
+      onChange={handleChangeSelectedThemes}
       closeMenuOnSelect={false}
       components={makeAnimated()}
       placeholder="Seleccione los temas..."

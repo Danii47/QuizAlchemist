@@ -2,7 +2,7 @@
   width: 100vw;
   height: 10vh;
   margin: 0;
-  background-color: var(--primary-color);
+  background-color: var(--primary-color1);
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid rgb(26, 70, 24);

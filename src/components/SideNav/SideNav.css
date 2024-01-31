@@ -16,3 +16,9 @@
 .modalNavigation {
   width: 100%;
 }
+.modal-content{
+  background-color: black;
+}
+.modal-dialog{
+  min-width: 50%;
+}

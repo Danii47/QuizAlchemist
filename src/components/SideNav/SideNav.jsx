@@ -11,7 +11,7 @@ export default function SideNav() {
 
   const collection = [{
     id: "001",
-    name: "MATEMÁTICAS",
+    name: "ANALISIS Y DISEÑO DE ALGORITMOS",
     color: "#29F",
     themes: [
       {
@@ -127,7 +127,7 @@ export default function SideNav() {
 
       <CollectionList className="collectionsList" handleSelectCollection={handleSelectCollection} collections={collections} />
 
-      <Modal show={showModal} onHide={handleHideModal} backdrop="static" centered>
+      <Modal show={showModal} onHide={handleHideModal} backdrop="static">
         <Modal.Header>
           {/* <Modal.Title>Modal heading</Modal.Title> */}
 
