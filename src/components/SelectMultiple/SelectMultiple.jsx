@@ -1,5 +1,6 @@
-import Select from "react-select";
 import { useState } from "react"
+import Select from "react-select"
+import makeAnimated from "react-select/animated"
 
 const options = [
   { value: "rojo", label: "rojo" },
@@ -27,6 +28,7 @@ export default function SelectMultiple({ themes }) {
       value={selectedTheme}
       onChange={handleChange}
       closeMenuOnSelect={false}
+      components={makeAnimated}
       placeholder="Seleccione los temas..."
     />
   )
