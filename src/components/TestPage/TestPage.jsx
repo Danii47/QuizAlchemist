@@ -76,12 +76,6 @@ export default function TestPage({ collectionSelected, themesSelected }) {
 
       </form>
 
-
-
-
-
-
-
     </>
   )
 }
