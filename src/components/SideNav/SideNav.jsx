@@ -6,9 +6,9 @@ import EditPage from "../EditPage/EditPage"
 import { Modal, Button } from "react-bootstrap"
 import { useState } from "react"
 import { BottomNavigation, BottomNavigationAction } from "@mui/material"
-import InfoIcon from '@mui/icons-material/Info';
-import EditNoteIcon from '@mui/icons-material/EditNote';
-import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
+import InfoIcon from '@mui/icons-material/Info'
+import EditNoteIcon from '@mui/icons-material/EditNote'
+import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl'
 
 export default function SideNav() {
 
@@ -18,7 +18,7 @@ export default function SideNav() {
     color: "#29F",
     themes: [
       {
-        name: "Tema 1",
+        name: "Algoritmos de ordenación",
         questions: [
           {
             question: "¿Qué orientación sexual tiene Dani?",
@@ -35,7 +35,7 @@ export default function SideNav() {
         ]
       },
       {
-        name: "Tema 2",
+        name: "Algoritmos de búsqueda",
         questions: [
           {
             question: "¿Qué orientación sexual tiene Dani?",
@@ -110,8 +110,6 @@ export default function SideNav() {
   const [pageId, setPageId] = useState(1)
   const [collectionSelected, setCollectionSelected] = useState()
 
-  
-
   const handleSelectCollection = (collection) => {
     setCollectionSelected(collection)
     setShowModal(true)
@@ -130,7 +128,7 @@ export default function SideNav() {
 
       <CollectionList className="collectionsList" handleSelectCollection={handleSelectCollection} collections={collections} />
 
-      <Modal show={showModal} onHide={handleHideModal} backdrop="static" contentClassName={`modalBody${pageId}`}>
+      <Modal show={showModal} onHide={handleHideModal} backdrop="static" contentClassName="modalBody">
         <Modal.Header className="shadow-sm">
           <BottomNavigation
             showLabels={false}
@@ -140,9 +138,9 @@ export default function SideNav() {
             }}
             className="modalNavigation"
           >
-            <BottomNavigationAction label="TEST" className="labelModalNavigation" icon={<ChecklistRtlIcon className="iconModalNavigation"/>}/>
-            <BottomNavigationAction label="INFORMACIÓN" className="labelModalNavigation" icon={<InfoIcon className="iconModalNavigation"/>}/>
-            <BottomNavigationAction label="EDITAR" className="labelModalNavigation" icon={<EditNoteIcon className="iconModalNavigation"/>}/>
+            <BottomNavigationAction label="TEST" className="labelModalNavigation" icon={<ChecklistRtlIcon className="iconModalNavigation" />} />
+            <BottomNavigationAction label="INFORMACIÓN" className="labelModalNavigation" icon={<InfoIcon className="iconModalNavigation" />} />
+            <BottomNavigationAction label="EDITAR" className="labelModalNavigation" icon={<EditNoteIcon className="iconModalNavigation" />} />
           </BottomNavigation>
 
         </Modal.Header>

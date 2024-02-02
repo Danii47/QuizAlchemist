@@ -26,23 +26,9 @@
 .modal-dialog {
   min-width: 50%;
 }
-.modal-body {
-  padding: 0 !important;
-}
 
-.modalBody0 {
-  height: 40vh;
-  transition: .45s height;
-}
-
-.modalBody1 {
-  height: 55vh;
-  transition: .45s height;
-}
-
-.modalBody2 {
-  height: 50vh;
-  transition: .45s height;
+.modalBody {
+  height: auto;
 }
 
 .saveButton {
@@ -65,23 +51,4 @@
 
 .css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected {
   color: var(--secondary-color-hover) !important;
-}
-
-
-
-@media ((width <= 1200px) or (height <= 850px)) {
-  .modalBody0 {
-    height: 60vh;
-    transition: .45s height;
-  }
-
-  .modalBody1 {
-    height: 55vh;
-    transition: .45s height;
-  }
-
-  .modalBody2 {
-    height: 50vh;
-    transition: .45s height;
-  }
 }
