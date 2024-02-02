@@ -1,7 +1,30 @@
 .infoPage {
+  height: 40vh;
+  padding: 2% !important;
+  overflow-y: scroll;
 
-  height: 100%;
-  padding: 2% 3%;
+}
+
+/* Estilo para el scrollbar de navegación */
+.infoPage::-webkit-scrollbar {
+  width: 5px; /* Ancho del scrollbar */
+  ;
+}
+
+/* Estilo para el "track" del scrollbar (la parte no desplazada) */
+.infoPage::-webkit-scrollbar-track {
+  background-color: none; /* Color del fondo del scrollbar */
+}
+
+/* Estilo para el "thumb" del scrollbar (la parte desplazada) */
+.infoPage::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color); /* Color verde del thumb */
+  border-radius: 14px; /* Bordes redondeados del thumb */
+}
+
+/* Estilo para el "corner" del scrollbar (la esquina entre el track y el thumb) */
+.infoPage::-webkit-scrollbar-corner {
+  background-color: #f1f1f1; /* Puedes ajustar el color según tus necesidades */
 }
 
 .row {
@@ -31,5 +54,49 @@
 
 .treeContainer {
   border: 1px solid var(--secondary-color) !important;
-  
+}
+
+.tree {
+  padding: 0.3%;
+  background-color: #10b98112;
+  cursor: default;
+
+}
+
+.gridLayout {
+  margin-top: 2vh;
+  display: grid;
+  grid-template-columns: 32% 32% 32%;
+  column-gap: 2%;
+  row-gap: 2vh;
+}
+
+.infoItem {
+  padding: 1%;
+}
+
+.labelItem {
+  margin-bottom: 5px;
+  color: #555;
+  user-select: none;
+}
+
+.inputItem {
+  text-align: center;
+  font-size: 1.3em;
+  background-color: #10b98112;
+  padding: 1%;
+  border-radius: 5px;
+  border: 1px solid var(--secondary-color);
+  cursor: default;
+}
+
+.boxShadow {
+  box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.14);
+}
+
+@media (width <=1200px) {
+  .gridLayout {
+    grid-template-columns: 100%;
+  }
 }
