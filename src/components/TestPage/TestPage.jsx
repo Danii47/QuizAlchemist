@@ -2,7 +2,6 @@ import "./TestPage.css"
 import SelectMultiple from "../SelectMultiple/SelectMultiple"
 import { toTitleCase } from "../../utils/pipes/toTitleCase"
 import { InputNumber } from 'primereact/inputnumber';
-import { Checkbox } from 'primereact/checkbox';
 import { ToggleButton } from 'primereact/togglebutton';
 import AutoStoriesIcon from '@mui/icons-material/AutoStories';
 import ChecklistRtlIcon from '@mui/icons-material/ChecklistRtl';
@@ -13,7 +12,7 @@ import "primereact/resources/themes/lara-light-green/theme.css"
 
 
 
-export default function TestPage({ collectionSelected, themesSelected }) {
+export default function TestPage({ collectionSelected }) {
 
   const [nQuestions, setNQuestions] = useState(0)
 
