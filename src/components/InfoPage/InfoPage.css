@@ -1,0 +1,35 @@
+.infoPage {
+
+  height: 100%;
+  padding: 2% 3%;
+}
+
+.row {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.card {
+  width: 100%;
+  transition: 0.4s all
+}
+
+.p-tree-container {
+  margin-bottom: 0 !important;
+  padding: 0;
+}
+
+.p-tree-toggler {
+  border-radius: 50%;
+  margin: 3px;
+}
+
+
+.infoQuestionContainer {
+  border: 1px solid var(--secondary-color);
+}
+
+.treeContainer {
+  border: 1px solid var(--secondary-color) !important;
+  
+}

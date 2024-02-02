@@ -1,6 +1,6 @@
 .sidenavContainer {
   width: 20vw;
-  background-color: var(--font-primary-color);
+  background-color: var(--font-main-color);
   border-right: 1px solid rgba(0 0 0 / .2);
   overflow-y: auto;
 }
@@ -15,10 +15,73 @@
 
 .modalNavigation {
   width: 100%;
+  display: flex;
+  gap: 3vw;
 }
-.modal-content{
-  background-color: black;
+
+.modal-content {
+  margin-top: 15vh;
 }
-.modal-dialog{
+
+.modal-dialog {
   min-width: 50%;
+}
+.modal-body {
+  padding: 0 !important;
+}
+
+.modalBody0 {
+  height: 40vh;
+  transition: .45s height;
+}
+
+.modalBody1 {
+  height: 55vh;
+  transition: .45s height;
+}
+
+.modalBody2 {
+  height: 50vh;
+  transition: .45s height;
+}
+
+.saveButton {
+  background-color: var(--secondary-color) !important;
+  border-color: var(--secondary-color) !important;
+}
+
+.saveButton:hover {
+  background-color: var(--secondary-color-hover) !important;
+  border-color: var(--secondary-color-hover) !important;
+}
+
+.iconModalNavigation {
+  font-size: 35px !important;
+}
+
+.css-imwso6-MuiBottomNavigationAction-label {
+  font-family: Rubik, Courier, monospace, sans-serif !important;
+}
+
+.css-1bjk3jo-MuiButtonBase-root-MuiBottomNavigationAction-root.Mui-selected {
+  color: var(--secondary-color-hover) !important;
+}
+
+
+
+@media ((width <= 1200px) or (height <= 850px)) {
+  .modalBody0 {
+    height: 60vh;
+    transition: .45s height;
+  }
+
+  .modalBody1 {
+    height: 55vh;
+    transition: .45s height;
+  }
+
+  .modalBody2 {
+    height: 50vh;
+    transition: .45s height;
+  }
 }

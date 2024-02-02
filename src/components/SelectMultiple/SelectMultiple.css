@@ -1,0 +1,34 @@
+.css-12a83d4-MultiValueRemove {
+  transition: .2s color, .2s background-color;
+}
+
+.css-12a83d4-MultiValueRemove:hover {
+  color: rgb(255 255 255 / .9) !important;
+  background-color: var(--secondary-color) !important;
+}
+
+.css-13cymwt-control:hover {
+  border-color: var(--secondary-color-hover) !important;
+}
+
+.css-13cymwt-control:hover .css-1xc3v61-indicatorContainer {
+  color: var(--secondary-color-hover) !important;
+}
+
+.css-t3ipsp-control {
+  border-color: var(--secondary-color) !important;
+  box-shadow: 0 0 0 1px var(--secondary-color) !important;
+}
+
+.css-t3ipsp-control {
+  border-color: var(--secondary-color) !important;
+  box-shadow: 0 0 0 1px var(--secondary-color) !important;
+}
+
+.css-15lsz6c-indicatorContainer:hover {
+  color: var(--secondary-color) !important;
+}
+
+.css-15lsz6c-indicatorContainer {
+  color: var(--secondary-color) !important;
+}
