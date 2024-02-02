@@ -1,6 +1,7 @@
 .infoPage {
-  height: 40vh;
+  max-height: 41vh;
   padding: 2% !important;
+  padding-top: 3.5vh !important;
   overflow-y: scroll;
 
 }
@@ -8,7 +9,6 @@
 /* Estilo para el scrollbar de navegación */
 .infoPage::-webkit-scrollbar {
   width: 5px; /* Ancho del scrollbar */
-  ;
 }
 
 /* Estilo para el "track" del scrollbar (la parte no desplazada) */
@@ -47,26 +47,26 @@
   margin: 3px;
 }
 
-
 .infoQuestionContainer {
   border: 1px solid var(--secondary-color);
 }
 
 .treeContainer {
   border: 1px solid var(--secondary-color) !important;
+  
 }
 
 .tree {
   padding: 0.3%;
   background-color: #10b98112;
   cursor: default;
-
+  
 }
 
 .gridLayout {
   margin-top: 2vh;
   display: grid;
-  grid-template-columns: 32% 32% 32%;
+  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 2%;
   row-gap: 2vh;
 }
@@ -95,8 +95,14 @@
   box-shadow: 1px 1px 15px 1px rgba(0, 0, 0, 0.14);
 }
 
-@media (width <=1200px) {
+@media (width <=1400px) {
   .gridLayout {
-    grid-template-columns: 100%;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (width <=700px) {
+  .gridLayout {
+    grid-template-columns: 1fr;
   }
 }

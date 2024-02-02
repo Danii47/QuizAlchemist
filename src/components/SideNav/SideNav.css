@@ -27,8 +27,8 @@
   min-width: 50%;
 }
 
-.modalBody {
-  height: auto;
+.modal-body {
+  padding-top: 0 !important;
 }
 
 .saveButton {

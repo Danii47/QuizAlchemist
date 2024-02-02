@@ -19,7 +19,7 @@ export default function InfoPage({ collectionSelected }) {
     <Container className="infoPage">
 
       <div className="treeContainer rounded boxShadow p-0">
-        <Tree value={nodes} className="w-full md:w-30rem justify-content-center tree" />
+        <Tree value={nodes} className="w-full md:w-30rem justify-content-center tree"/>
       </div>
 
 
