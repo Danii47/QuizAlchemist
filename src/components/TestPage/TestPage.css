@@ -1,46 +1,66 @@
-.testForm{
-    display: flex;
-    flex-direction: column;
-    gap: 2vh;
-    width: 80%;
-    margin: auto;
+.testForm {
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  width: 80%;
+  margin: auto;
+  height: 100%;
+  justify-content: space-around;
 }
 
-.selectMultipleContainer{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1vw;
+.selectMultipleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1vw;
 }
 
-.selectMultipleLabel{
-    flex: 5;
-}
-.selectMultipleInput{
-    flex: 6;
+.selectMultipleLabel {
+  flex: 5;
 }
 
-.nQuestionsContainer{
+.selectMultipleInput {
+  flex: 6;
+}
+
+.nQuestionsContainer {
+  display: flex;
+  flex: 5;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nQuestionsLabel {
+  flex: 2;
+}
+
+.nQuestionsInput {
+  flex: 3;
+}
+
+.bottomRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 2.2vw;
+}
+
+.examModeContainer {
+  display: flex;
+  flex: 2;
+  gap: .4vw;
+  justify-content: right;
+  align-items: center;
+}
+.btnExamMode{
     display: flex;
-    flex: 2;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
+    padding: 5%;
 }
-.nQuestionsLabel{
-    flex: 2;
+
+.p-tooltip{
+    width: 15vw;
+    text-align: center;
 }
-.nQuestionsInput{
-    flex: 3;
-}
-.bottomRow{
-    display: flex;
-    justify-content: space-between;
-    gap: 1.2vw;
-}
-.examModeContainer{
-    display: flex;
-    flex: 1;
-    gap: .4vw;
-    justify-content: right;
-    align-items: center;
-}
+.p-tooltip-text{
+    padding: 2%;
+}	

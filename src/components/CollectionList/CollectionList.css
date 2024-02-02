@@ -5,13 +5,13 @@
 
 .collectionsGroup button {
   background-color: transparent;
-  color: var(--primary-color);
+  color: var(--main-color);
   font-size: 1.5em;
   width: 100%;
   border: none;
   height: 12vh;
-  border-top: 2px solid var(--primary-color);
-  transition: .2s all;
+  border-top: 2px solid var(--main-color);
+  transition: .2s background-color, .2s color;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,13 +19,13 @@
 
 
 .collectionsGroup:last-child {
-  border-bottom: 2px solid var(--primary-color);
+  border-bottom: 2px solid var(--main-color);
 }
 
 
 
 .collectionsGroup button:hover {
-  background-color: var(--primary-color);
+  background-color: var(--main-color);
   color: white;
 }
 
