@@ -2,64 +2,112 @@ import "./EditPage.css"
 import EditIcon from '@mui/icons-material/Edit'
 import DoneIcon from '@mui/icons-material/Done'
 import CloseIcon from '@mui/icons-material/Close';
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Tree } from 'primereact/tree'
 import { ToggleButton } from 'primereact/togglebutton'
 
 export default function EditPage({ collectionSelected }) {
 
   const [collectionNameEditing, setCollectionNameEditing] = useState(false)
-  const [editPageNodes, setEditPageNodes] = useState([])
 
+  const [editPageNodes, setEditPageNodes] = useState([{
+    key: "0",
+    label: `${collectionSelected.name} [${collectionSelected.themes.length}]`,
+    icon: undefined,
+    children: collectionSelected.themes.map((theme, themeKey) => {
 
-  const handleChangeCorrectAnswer = (e) => {
-  
-  
-  }
+      return {
 
-  
-  useEffect(() => {
-    const newNodes = [{ 
-      key: "0",
-      label: `${collectionSelected.name} [${collectionSelected.themes.length}]`,
-      icon: undefined,
-      children: collectionSelected.themes.map((theme, themeKey) => {
-        return {
-          key: `0-${themeKey}`,
-          label: <div className="editTreeContainer">
+        key: `0-${themeKey}`,
+        label: (
+          <div className="editTreeContainer">
             [{themeKey + 1}]
             <input className="editTreeInput" type="text" defaultValue={`${theme.name} (${theme.questions.length})`} />
-          </div>,
-          icon: undefined,
-          children: theme.questions.map((questionObject, questionObjectKey) => {
-            return {
-              key: `0-${themeKey}-${questionObjectKey}`,
-              label: <div className="editTreeContainer">
+          </div>
+        ),
+        children: theme.questions.map((questionObject, questionObjectKey) => {
+
+          return {
+
+            key: `0-${themeKey}-${questionObjectKey}`,
+            label: (
+              <div className="editTreeContainer">
                 [{questionObjectKey + 1}]
                 <input className="editTreeInput" type="text" defaultValue={`${questionObject.question}`} />
-              </div>,
-              icon: undefined,
-              children: questionObject.answers.map((answerObject, answerObjectKey) => {
-                return {
-                  key: `0-${themeKey}-${questionObjectKey}-${answerObjectKey}`,
-                  label: <div className="editTreeContainer">
-                    <ToggleButton onIcon={<DoneIcon />} offIcon={<CloseIcon />} checked={answerObject.correct} onLabel={null} offLabel={null} onChange={(e) => handleChangeCorrectAnswer(e)}/>
-                    {/* <ToggleButton className="btnExamMode" tooltip="Selecciona el modo del test" tooltipOptions={{showDelay: 800, mouseTrack: true, mouseTrackTop: -35, mouseTrackLeft: -90}} onLabel="Modo examen" offLabel="Modo estudio" onIcon={<ChecklistRtlIcon/>} offIcon={<AutoStoriesIcon/>}
-            checked={examMode} onChange={(e) => setExamMode(e.value)} /> */}
-                    <input className="editTreeInput" defaultValue={`${answerObject.label}`}/>
-                  </div>,
-                  icon: undefined
-                }
-              })
-            }
-          })
-        }
-      })
-    }]
+              </div>
+            ),
+            children: questionObject.answers.map((answerObject, answerObjectKey) => {
 
-    setEditPageNodes(newNodes)
-  }, [collectionSelected])
-  
+              return {
+
+                key: `0-${themeKey}-${questionObjectKey}-${answerObjectKey}`,
+                answerLabel: answerObject.label,
+                correct: answerObject.correct,
+                label: (
+                  <div className="editTreeContainer">
+                    <ToggleButton
+                      id={answerObjectKey}
+                      onIcon={<DoneIcon />}
+                      offIcon={<CloseIcon />}
+                      checked={answerObject.correct}
+                      onLabel={null}
+                      offLabel={null}
+                      className={`answerToggleButton ${answerObject.correct}`}
+                      onChange={(e) => handleChangeCorrectAnswer(e, themeKey, questionObjectKey)}
+                    />
+                    <input className="editTreeInput" defaultValue={`${answerObject.label}`} />
+                  </div>
+                )
+
+              }
+            })
+
+          }
+        })
+      }
+
+    })
+  }])
+
+
+  const handleChangeCorrectAnswer = (e, themeKey, questionObjectKey) => {
+
+
+    if (!e.value) return // Si el botón pasa a off, no hace nada
+
+    setEditPageNodes((prevEditPageNodes) => {
+
+      const newEditPageNodes = [...prevEditPageNodes]
+
+      newEditPageNodes[0].children[themeKey].children[questionObjectKey].children.forEach((answerObject, answerObjectKey) => {
+
+        if (answerObjectKey === e.target.id) {
+
+          answerObject.label = <div className="editTreeContainer">
+            <ToggleButton id={answerObjectKey} onIcon={<DoneIcon />} offIcon={<CloseIcon />} checked={true} onLabel={null} offLabel={null} className="answerToggleButton true" onChange={(e) => handleChangeCorrectAnswer(e, themeKey, questionObjectKey)} />
+            <input className="editTreeInput" defaultValue={`${answerObject.answerLabel}`} />
+          </div>
+
+          answerObject.correct = true
+
+        } else {
+
+          answerObject.label = <div className="editTreeContainer">
+            <ToggleButton id={answerObjectKey} onIcon={<DoneIcon />} offIcon={<CloseIcon />} checked={false} onLabel={null} offLabel={null} className="answerToggleButton false" onChange={(e) => handleChangeCorrectAnswer(e, themeKey, questionObjectKey)} />
+            <input className="editTreeInput" defaultValue={`${answerObject.answerLabel}`} />
+          </div>
+
+          answerObject.correct = false
+
+        }
+
+      })
+
+      return newEditPageNodes
+
+    })
+  }
+
   return (
     <div className="editPage">
       <div className="gridLayoutEdit">
@@ -73,14 +121,14 @@ export default function EditPage({ collectionSelected }) {
                   ? <EditIcon />
                   : <DoneIcon />
               }
-              
+
             </div>
           </div>
 
         </div>
       </div>
 
-      <Tree value={editPageNodes}/>
+      <Tree value={editPageNodes} />
 
 
 

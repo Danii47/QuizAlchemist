@@ -1,7 +1,6 @@
 .editItem {
     display: flex;
     flex-direction: column;
-
 }
 
 .editItemLabel {
@@ -64,14 +63,14 @@
     border: 1px solid var(--secondary-color);
     border-radius: 5px;
     margin: 1%;
-    padding: 1%;
+    padding: .6%;
     width: 96%;
     background-color: #10b98112;
     color: black;
 }
 
 .editPage .p-treenode-content {
-    padding: 2%;
+    padding: 1.2%;
 }
 
 .editPage .p-treenode-label {
@@ -81,4 +80,18 @@
 .editTreeContainer {
     display: flex;
     align-items: center;
+}
+
+.answerToggleButton {
+    padding: .7%;
+    width: auto;
+    border-radius: 10px;
+}
+
+.answerToggleButton.false {
+    background-color: rgba(255, 90, 90, 0.7);
+}
+
+.answerToggleButton.false:hover {
+    background-color: rgba(222, 76, 76, 0.7);
 }
