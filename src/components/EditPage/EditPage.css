@@ -1,0 +1,84 @@
+.editItem {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.editItemLabel {
+    margin-bottom: 5px;
+    color: #555;
+    user-select: none;
+}
+
+.editItemInput {
+    text-align: center;
+    background-color: #10b98112;
+    width: 90%;
+    padding: 1.2%;
+    border-radius: 5px;
+    border: 1px solid var(--secondary-color);
+    color: black;
+    /* cursor: default; */
+}
+
+.editItemInfo {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3%;
+    align-items: center;
+}
+
+.gridLayoutEdit {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.editItemIcon {
+    padding: 1.1%;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color .3s;
+}
+
+.editItemIcon.false {
+    border: 1px solid #b9a810;
+    background-color: #b9a81012;
+}
+
+.editItemIcon.true {
+    border: 1px solid var(--secondary-color);
+    background-color: #10b98112;
+}
+
+.editItemIcon.true:hover {
+    background-color: var(--secondary-color-hover);
+    color: white;
+}
+
+.editItemIcon.false:hover {
+    background-color: #b9a810;
+    color: white;
+}
+
+.editTreeInput {
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    margin: 1%;
+    padding: 1%;
+    width: 96%;
+    background-color: #10b98112;
+    color: black;
+}
+
+.editPage .p-treenode-content {
+    padding: 2%;
+}
+
+.editPage .p-treenode-label {
+    width: 100%;
+}
+
+.editTreeContainer {
+    display: flex;
+    align-items: center;
+}

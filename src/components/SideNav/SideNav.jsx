@@ -14,40 +14,64 @@ export default function SideNav() {
 
   const collection = [{
     id: "001",
-    name: "ANALISIS Y DISEÑO DE ALGORITMOS",
+    name: "Fundamentos de organización de empresa",
     color: "#29F",
     themes: [
       {
-        name: "Algoritmos de ordenación",
+        name: "El marketing I",
         questions: [
           {
-            question: "¿Qué orientación sexual tiene Dani?",
-            answer: "Es maricón perdido"
+            question: "El marketing empresarial se divide en: ",
+            answers: [
+              { label: "Con y sin ánimo de lucro", correct: false },
+              { label: "De consummo e industrial", correct: true },
+              { label: "Industrial y de servicios", correct: false },
+            ]
           },
           {
-            question: "¿Qué orientación sexual tiene Dani?",
-            answer: "Es maricón perdido"
+            question: "Las dimensiones de una demanda son: ",
+            answers: [
+              { label: "Precio y calidad", correct: false },
+              { label: "Tiempo, producto y mercado", correct: true },
+              { label: "Producto y mercado", correct: false },
+            ]
           },
           {
-            question: "¿Qué orientación sexual tiene Dani?",
-            answer: "Es maricón perdido"
+            question: "La autofinanciación es una fuente de financiacion",
+            answers: [
+              { label: "A largo plazo", correct: true },
+              { label: "A corto plazo", correct: false },
+              { label: "Depende del tipo de autofinanciación", correct: false },
+            ]
           }
         ]
       },
       {
-        name: "Algoritmos de búsqueda",
+        name: "El marketing II",
         questions: [
           {
-            question: "¿Qué orientación sexual tiene Dani?",
-            answer: "Es maricón perdido"
+            question: "El marketing empresarial se divide en: ",
+            answers: [
+              { label: "Con y sin ánimo de lucro", correct: false },
+              { label: "De consummo e industrial", correct: true },
+              { label: "Industrial y de servicios", correct: false },
+            ]
           },
           {
-            question: "¿Qué orientación sexual tiene Dani?",
-            answer: "Es maricón perdido"
+            question: "Las dimensiones de una demanda son: ",
+            answers: [
+              { label: "Precio y calidad", correct: false },
+              { label: "Tiempo, producto y mercado", correct: true },
+              { label: "Producto y mercado", correct: false },
+            ]
           },
           {
-            question: "¿Qué orientación sexual tiene Dani?",
-            answer: "Es maricón perdido"
+            question: "La autofinanciación es una fuente de financiacion",
+            answers: [
+              { label: "A largo plazo", correct: true },
+              { label: "A corto plazo", correct: false },
+              { label: "Depende del tipo de autofinanciación", correct: false },
+            ]
           }
         ]
       }

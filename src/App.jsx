@@ -3,6 +3,7 @@ import HomePage from './pages/HomePage/HomePage.jsx'
 import { db } from "./firebase.js"
 import { set, ref,get } from "firebase/database"
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'primeicons/primeicons.css'
 
 function App() {
 
