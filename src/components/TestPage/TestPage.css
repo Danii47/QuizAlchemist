@@ -1,11 +1,12 @@
 .testForm {
   display: flex;
   flex-direction: column;
-  gap: 2vh;
+  gap: 3vh;
   width: 80%;
-  margin: auto;
+  margin: 3vh auto;
   height: 100%;
   justify-content: space-around;
+
 }
 
 .selectMultipleContainer {
@@ -51,16 +52,24 @@
   justify-content: right;
   align-items: center;
 }
-.btnExamMode{
-    display: flex;
-    width: 100%;
-    padding: 5%;
+
+.btnExamMode {
+  display: flex;
+  width: 100%;
+  padding: 5%;
 }
 
-.p-tooltip{
-    width: 15vw;
-    text-align: center;
+.p-tooltip {
+  width: 15vw;
+  text-align: center;
 }
-.p-tooltip-text{
-    padding: 2%;
-}	
+
+.p-tooltip-text {
+  padding: 2%;
+}
+
+@media (width < 1400px) {
+  .p-button-label {
+    display: none;
+  }
+}

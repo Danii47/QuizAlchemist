@@ -1,14 +1,21 @@
 import "./EditPage.css"
 import EditIcon from '@mui/icons-material/Edit'
 import DoneIcon from '@mui/icons-material/Done'
+import CloseIcon from '@mui/icons-material/Close';
 import { useState, useEffect } from "react"
 import { Tree } from 'primereact/tree'
-
+import { ToggleButton } from 'primereact/togglebutton'
 
 export default function EditPage({ collectionSelected }) {
 
   const [collectionNameEditing, setCollectionNameEditing] = useState(false)
   const [editPageNodes, setEditPageNodes] = useState([])
+
+
+  const handleChangeCorrectAnswer = (e) => {
+  
+  
+  }
 
   
   useEffect(() => {
@@ -36,10 +43,12 @@ export default function EditPage({ collectionSelected }) {
                 return {
                   key: `0-${themeKey}-${questionObjectKey}-${answerObjectKey}`,
                   label: <div className="editTreeContainer">
-                    [{answerObjectKey + 1}]
+                    <ToggleButton onIcon={<DoneIcon />} offIcon={<CloseIcon />} checked={answerObject.correct} onLabel={null} offLabel={null} onChange={(e) => handleChangeCorrectAnswer(e)}/>
+                    {/* <ToggleButton className="btnExamMode" tooltip="Selecciona el modo del test" tooltipOptions={{showDelay: 800, mouseTrack: true, mouseTrackTop: -35, mouseTrackLeft: -90}} onLabel="Modo examen" offLabel="Modo estudio" onIcon={<ChecklistRtlIcon/>} offIcon={<AutoStoriesIcon/>}
+            checked={examMode} onChange={(e) => setExamMode(e.value)} /> */}
                     <input className="editTreeInput" defaultValue={`${answerObject.label}`}/>
                   </div>,
-                  icon: answerObject.correct ? "pi pi-fw pi-check" : "pi pi-times"
+                  icon: undefined
                 }
               })
             }
@@ -47,19 +56,6 @@ export default function EditPage({ collectionSelected }) {
         }
       })
     }]
-    
-    // collectionSelected.themes.forEach((theme, key) => {
-    //   newNodes[0].children.push({
-    //     key: `0-${key}`, label: `[${key + 1}] ${theme.name} (${theme.questions.length})`, icon: undefined, children: [] 
-    //   })
-    //   theme.questions.forEach((questionObject, questionObjectKey) => {
-    //     newNodes[0].children[key].children.push({
-    //       key: `0-${key}-${questionObjectKey}`, label: `${questionObject.question}`, icon: undefined, children: questionObject.answers.map((answer, answerKey) => {
-    //         return { key: `0-${key}-${questionObjectKey}-${answerKey}`, label: `${answer.label}`, icon: undefined } 
-    //       })
-    //     })
-    //   })
-    // })
 
     setEditPageNodes(newNodes)
   }, [collectionSelected])
