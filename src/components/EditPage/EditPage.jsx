@@ -1,19 +1,25 @@
 import "./EditPage.css"
-import EditIcon from '@mui/icons-material/Edit'
+import LockIcon from '@mui/icons-material/Lock'
+import LockOpenIcon from '@mui/icons-material/LockOpen'
 import DoneIcon from '@mui/icons-material/Done'
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '@mui/icons-material/Close'
 import { useState } from "react"
 import { Tree } from 'primereact/tree'
 import { ToggleButton } from 'primereact/togglebutton'
 
 export default function EditPage({ collectionSelected }) {
 
+
   const [collectionNameEditing, setCollectionNameEditing] = useState(false)
 
   const [editPageNodes, setEditPageNodes] = useState([{
     key: "0",
-    label: `${collectionSelected.name} [${collectionSelected.themes.length}]`,
-    icon: undefined,
+    label: (
+      <div className="editTreeContainer">
+        <input className="editTreeInput" type="text" defaultValue={`${collectionSelected.name} (${collectionSelected.themes.length})`} />
+      </div>
+    ),
+
     children: collectionSelected.themes.map((theme, themeKey) => {
 
       return {
@@ -110,29 +116,27 @@ export default function EditPage({ collectionSelected }) {
 
   return (
     <div className="editPage">
-      <div className="gridLayoutEdit">
-        <div className="editItem">
-          <div className="editItemLabel">Nombre de la colección</div>
-          <div className="editItemInfo">
-            <input className="editItemInput" type="text" defaultValue={collectionSelected.name} disabled={!collectionNameEditing} />
-            <div className={`editItemIcon ${collectionNameEditing}`} onClick={() => setCollectionNameEditing(!collectionNameEditing)}>
-              {
-                !collectionNameEditing
-                  ? <EditIcon />
-                  : <DoneIcon />
-              }
 
-            </div>
-          </div>
-
-        </div>
+      <div className="editItemContainer">
+        <div className="editItemLabel">Nombre de la colección</div>
+        {/* <div className={`editItemIconContainer ${collectionNameEditing}`} onClick={() => setCollectionNameEditing(!collectionNameEditing)}>
+          {
+            !collectionNameEditing
+              ? <EditIcon className="editItemIcon"/>
+              : <DoneIcon className="editItemIcon"/>
+          }
+        </div> */}
+        <ToggleButton
+          onIcon={<LockIcon />}
+          offIcon={<LockOpenIcon />}
+          checked={!collectionNameEditing}
+          onLabel={null}
+          offLabel={null}
+          className={`editItemIconContainer ${collectionNameEditing}`}
+          onChange={() => setCollectionNameEditing(!collectionNameEditing)}
+        />
       </div>
-
       <Tree value={editPageNodes} />
-
-
-
-
     </div>
   )
 }
