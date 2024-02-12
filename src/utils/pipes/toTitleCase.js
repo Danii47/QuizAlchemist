@@ -4,5 +4,5 @@ export function toTitleCase(str) {
     function (txt) {
       return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
     }
-  );
+  )
 }
