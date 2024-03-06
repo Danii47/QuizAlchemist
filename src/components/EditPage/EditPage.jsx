@@ -3,7 +3,7 @@ import LockIcon from '@mui/icons-material/Lock'
 import LockOpenIcon from '@mui/icons-material/LockOpen'
 import DoneIcon from '@mui/icons-material/Done'
 import CloseIcon from '@mui/icons-material/Close'
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Tree } from 'primereact/tree'
 import { ToggleButton } from 'primereact/togglebutton'
 
@@ -12,68 +12,9 @@ export default function EditPage({ collectionSelected }) {
 
   const [collectionNameEditing, setCollectionNameEditing] = useState(false)
 
-  const [editPageNodes, setEditPageNodes] = useState([{
-    key: "0",
-    label: (
-      <div className="editTreeContainer">
-        <input className="editTreeInput" type="text" defaultValue={`${collectionSelected.name} (${collectionSelected.themes.length})`} />
-      </div>
-    ),
 
-    children: collectionSelected.themes.map((theme, themeKey) => {
 
-      return {
-
-        key: `0-${themeKey}`,
-        label: (
-          <div className="editTreeContainer">
-            [{themeKey + 1}]
-            <input className="editTreeInput" type="text" defaultValue={`${theme.name} (${theme.questions.length})`} />
-          </div>
-        ),
-        children: theme.questions.map((questionObject, questionObjectKey) => {
-
-          return {
-
-            key: `0-${themeKey}-${questionObjectKey}`,
-            label: (
-              <div className="editTreeContainer">
-                [{questionObjectKey + 1}]
-                <input className="editTreeInput" type="text" defaultValue={`${questionObject.question}`} />
-              </div>
-            ),
-            children: questionObject.answers.map((answerObject, answerObjectKey) => {
-
-              return {
-
-                key: `0-${themeKey}-${questionObjectKey}-${answerObjectKey}`,
-                answerLabel: answerObject.label,
-                correct: answerObject.correct,
-                label: (
-                  <div className="editTreeContainer">
-                    <ToggleButton
-                      id={answerObjectKey}
-                      onIcon={<DoneIcon />}
-                      offIcon={<CloseIcon />}
-                      checked={answerObject.correct}
-                      onLabel={null}
-                      offLabel={null}
-                      className={`answerToggleButton ${answerObject.correct}`}
-                      onChange={(e) => handleChangeCorrectAnswer(e, themeKey, questionObjectKey)}
-                    />
-                    <input className="editTreeInput" defaultValue={`${answerObject.label}`} />
-                  </div>
-                )
-
-              }
-            })
-
-          }
-        })
-      }
-
-    })
-  }])
+  const [editPageNodes, setEditPageNodes] = useState([])
 
 
   const handleChangeCorrectAnswer = (e, themeKey, questionObjectKey) => {
@@ -113,6 +54,77 @@ export default function EditPage({ collectionSelected }) {
 
     })
   }
+
+  useEffect(() => {
+  
+    
+    setEditPageNodes([{
+      key: "0",
+      label: (
+        <div className="editTreeContainer">
+          <input className="editTreeInput" type="text" defaultValue={`${collectionSelected.name} (${collectionSelected.themes.length})`} disabled={!collectionNameEditing} />
+        </div>
+      ),
+      inputValue: collectionSelected.name,
+      children: collectionSelected.themes.map((theme, themeKey) => {
+
+        return {
+
+          key: `0-${themeKey}`,
+          label: (
+            <div className="editTreeContainer">
+              [{themeKey + 1}]
+              <input className="editTreeInput" type="text" defaultValue={`${theme.name} (${theme.questions.length})`} disabled={!collectionNameEditing} />
+            </div>
+          ),
+          inputValue: theme.name,
+          children: theme.questions.map((questionObject, questionObjectKey) => {
+
+            return {
+
+              key: `0-${themeKey}-${questionObjectKey}`,
+              label: (
+                <div className="editTreeContainer">
+                  [{questionObjectKey + 1}]
+                  <input className="editTreeInput" type="text" defaultValue={`${questionObject.question}`} disabled={!collectionNameEditing} />
+                </div>
+              ),
+              inputValue: questionObject.question,
+              children: questionObject.answers.map((answerObject, answerObjectKey) => {
+
+                return {
+
+                  key: `0-${themeKey}-${questionObjectKey}-${answerObjectKey}`,
+                  answerLabel: answerObject.label,
+                  correct: answerObject.correct,
+                  label: (
+                    <div className="editTreeContainer">
+                      <ToggleButton
+                        id={answerObjectKey}
+                        onIcon={<DoneIcon />}
+                        offIcon={<CloseIcon />}
+                        checked={answerObject.correct}
+                        onLabel={null}
+                        offLabel={null}
+                        className={`answerToggleButton ${answerObject.correct}`}
+                        onChange={(e) => handleChangeCorrectAnswer(e, themeKey, questionObjectKey)}
+                      />
+                      <input className="editTreeInput" defaultValue={`${answerObject.label}`} disabled={!collectionNameEditing} />
+                    </div>
+                  )
+
+                }
+              })
+
+            }
+          })
+        }
+
+      })
+    }])
+    // eslint-disable-next-line
+  }, [collectionSelected, collectionNameEditing])
+
 
   return (
     <div className="editPage">
