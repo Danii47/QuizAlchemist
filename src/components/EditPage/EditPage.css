@@ -38,7 +38,6 @@
 
 .editItemIconContainer.p-button:focus {
     box-shadow: none;
-
 }
 
 .editTreeInput {
@@ -83,4 +82,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.p-tree.p-component {
+    max-height: 50vh;
+    overflow-y: scroll;
+}
+
+.p-tree.p-component::-webkit-scrollbar {
+    display: none;
 }
