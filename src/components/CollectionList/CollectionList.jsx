@@ -9,11 +9,10 @@ export default function CollectionList({ collections, handleSelectCollection }) 
       {
         collections.map((collection) => (
           // TODO: sé que está mal lo del id dani
-          <li>
-            <button key={collection.id} onClick={() => handleSelectCollection(collection)}>
-              <div className="bandContainer" style={{ "borderColor": `${collection.color}` }}>
-                {collection.name}
-              </div>
+          <li key={collection.id}>
+            <button onClick={() => handleSelectCollection(collection)}>
+              {collection.name}
+              
             </button>
           </li>
         ))

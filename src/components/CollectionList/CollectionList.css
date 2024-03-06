@@ -3,14 +3,24 @@
   padding: 0;
 }
 
+.collectionsGroup li {
+  padding: 4px 8px;
+
+}
+
 .collectionsGroup button {
   background-color: transparent;
-  color: var(--main-color);
+  /*color: var(--main-color);*/
+  color: #555;
   font-size: 1.5em;
   width: 100%;
   border: none;
+  padding: 20px;
+  border-radius: 10px;
   height: 12vh;
-  border-top: 2px solid var(--main-color);
+  border: 1px solid var(--secondary-color);
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.10);
+  background-color: #3ebd9312;
   transition: .2s background-color, .2s color;
   display: flex;
   justify-content: center;
@@ -25,15 +35,6 @@
 
 
 .collectionsGroup button:hover {
-  background-color: var(--main-color);
-  color: white;
-}
-
-.bandContainer {
-  width: 92%;
-  height: 85%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-left: 8px solid;
+  background-color: #3ebd9357;
+  /*color: white;*/
 }
