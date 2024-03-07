@@ -55,14 +55,71 @@ export default function EditPage({ collectionSelected }) {
     })
   }
 
-  useEffect(() => {
+  const handleCollectionNameChange = (newName) => {
+
+    setEditPageNodes((prevEditPageNodes) => {
+
+      const newEditPageNodes = [...prevEditPageNodes]
+
+      newEditPageNodes[0].inputValue = newName
+
+      return newEditPageNodes
+
+    })
+
+  }
+
+  const handleThemeNameChange = (themeKey, newName) => {
+
+    setEditPageNodes((prevEditPageNodes) => {
+
+      const newEditPageNodes = [...prevEditPageNodes]
+
+
+      newEditPageNodes[0].children[themeKey].inputValue = newName
+
+      return newEditPageNodes
+
+    })
+
+  }
+
+  const handleQuestionChange = (themeKey, questionObjectKey, newName) => {
+
+    setEditPageNodes((prevEditPageNodes) => {
+
+      const newEditPageNodes = [...prevEditPageNodes]
+
+      newEditPageNodes[0].children[themeKey].children[questionObjectKey].inputValue = newName
+
+      return newEditPageNodes
+
+    })
+
+  }
+
+  const handleAnswerChange = (themeKey, questionObjectKey, answerObjectKey, newName) => {
+      
+      setEditPageNodes((prevEditPageNodes) => {
   
-    
+        const newEditPageNodes = [...prevEditPageNodes]
+  
+        newEditPageNodes[0].children[themeKey].children[questionObjectKey].children[answerObjectKey].inputValue = newName
+  
+        return newEditPageNodes
+  
+      })
+  
+    }
+
+  useEffect(() => {
+    console.log(editPageNodes)
+
     setEditPageNodes([{
       key: "0",
       label: (
         <div className="editTreeContainer">
-          <input className="editTreeInput" type="text" defaultValue={`${collectionSelected.name} (${collectionSelected.themes.length})`} disabled={!collectionNameEditing} />
+          <input className="editTreeInput" type="text" onChange={(e) => handleCollectionNameChange(e.target.value)} defaultValue={`${collectionSelected.name}`} disabled={!collectionNameEditing} />
         </div>
       ),
       inputValue: collectionSelected.name,
@@ -74,7 +131,7 @@ export default function EditPage({ collectionSelected }) {
           label: (
             <div className="editTreeContainer">
               [{themeKey + 1}]
-              <input className="editTreeInput" type="text" defaultValue={`${theme.name} (${theme.questions.length})`} disabled={!collectionNameEditing} />
+              <input className="editTreeInput" type="text" onChange={(e) => handleThemeNameChange(themeKey, e.target.value)} defaultValue={`${theme.name}`} disabled={!collectionNameEditing} />
             </div>
           ),
           inputValue: theme.name,
@@ -86,7 +143,7 @@ export default function EditPage({ collectionSelected }) {
               label: (
                 <div className="editTreeContainer">
                   [{questionObjectKey + 1}]
-                  <input className="editTreeInput" type="text" defaultValue={`${questionObject.question}`} disabled={!collectionNameEditing} />
+                  <input className="editTreeInput" type="text" onChange={(e) => handleQuestionChange(themeKey, questionObjectKey, e.target.value)} defaultValue={`${questionObject.question}`} disabled={!collectionNameEditing} />
                 </div>
               ),
               inputValue: questionObject.question,
@@ -109,7 +166,7 @@ export default function EditPage({ collectionSelected }) {
                         className={`answerToggleButton ${answerObject.correct}`}
                         onChange={(e) => handleChangeCorrectAnswer(e, themeKey, questionObjectKey)}
                       />
-                      <input className="editTreeInput" defaultValue={`${answerObject.label}`} disabled={!collectionNameEditing} />
+                      <input className="editTreeInput" onChange={(e) => handleAnswerChange(themeKey, questionObjectKey, answerObjectKey, e.target.value)} defaultValue={`${answerObject.label}`} disabled={!collectionNameEditing} />
                     </div>
                   )
 
