@@ -3,7 +3,6 @@ import "./CollectionList.css";
 
 export default function CollectionList({ collections, handleSelectCollection }) {
 
-
   return (
     <ul className="collectionsGroup">
       {

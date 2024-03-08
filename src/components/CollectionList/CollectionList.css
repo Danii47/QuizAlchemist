@@ -27,13 +27,6 @@
   align-items: center;
 }
 
-
-.collectionsGroup:last-child {
-  border-bottom: 2px solid var(--main-color);
-}
-
-
-
 .collectionsGroup button:hover {
   background-color: #3ebd9357;
   /*color: white;*/

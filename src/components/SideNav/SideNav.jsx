@@ -124,9 +124,6 @@ export default function SideNav() {
   const collections = [
     ...collection,
     ...collection,
-    ...collection,
-    ...collection,
-    ...collection,
 
   ]
 
